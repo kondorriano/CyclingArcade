@@ -531,7 +531,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4896702924671760}
   - component: {fileID: 33157523631034664}
-  - component: {fileID: 65984274059211928}
   - component: {fileID: 23643787357160226}
   m_Layer: 0
   m_Name: Cube
@@ -926,7 +925,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4141969512356352}
   - component: {fileID: 33081322312489760}
-  - component: {fileID: 65585376576020964}
   - component: {fileID: 23485398728658448}
   m_Layer: 0
   m_Name: Cube
@@ -2276,7 +2274,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1348458498050712}
-  m_LocalRotation: {x: 0.79432034, y: -0.53215045, z: 0.27805704, w: 0.09249458}
+  m_LocalRotation: {x: 0.79432046, y: -0.5321505, z: 0.27805707, w: 0.092494585}
   m_LocalPosition: {x: -0.25325325, y: 0.0068199895, z: -0.015760317}
   m_LocalScale: {x: 0.9999998, y: 1, z: 0.9999999}
   m_Children:
@@ -2832,7 +2830,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1148045660990214}
-  m_LocalRotation: {x: -0.5810912, y: -0.17801826, z: -0.5470138, w: 0.57568944}
+  m_LocalRotation: {x: -0.5810913, y: -0.17801827, z: -0.5470139, w: 0.5756895}
   m_LocalPosition: {x: -0.2532532, y: -0.0068199113, z: -0.015760183}
   m_LocalScale: {x: 0.9999997, y: 0.9999999, z: 0.9999998}
   m_Children:
@@ -4214,30 +4212,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65585376576020964
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1493195535548228}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65984274059211928
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259534877593160}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95396680545246344
 Animator:
   serializedVersion: 3
@@ -4294,8 +4268,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114829651098134910}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114726924672412312
