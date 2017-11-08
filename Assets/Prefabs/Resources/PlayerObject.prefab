@@ -1598,7 +1598,6 @@ GameObject:
   - component: {fileID: 4862407768136882}
   - component: {fileID: 136993484839311762}
   - component: {fileID: 54129987851052370}
-  - component: {fileID: 114986144244840508}
   m_Layer: 0
   m_Name: DummyCyclist
   m_TagString: Untagged
@@ -2277,7 +2276,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1348458498050712}
-  m_LocalRotation: {x: 0.79432046, y: -0.5321505, z: 0.27805707, w: 0.092494585}
+  m_LocalRotation: {x: 0.79432034, y: -0.53215045, z: 0.27805704, w: 0.09249458}
   m_LocalPosition: {x: -0.25325325, y: 0.0068199895, z: -0.015760317}
   m_LocalScale: {x: 0.9999998, y: 1, z: 0.9999999}
   m_Children:
@@ -2710,7 +2709,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827150225420702}
-  m_LocalRotation: {x: -0.5810912, y: -0.17801826, z: -0.5470138, w: 0.57568944}
+  m_LocalRotation: {x: -0.5810913, y: -0.17801827, z: -0.5470139, w: 0.5756895}
   m_LocalPosition: {x: -0.2532532, y: -0.0068199113, z: -0.015760183}
   m_LocalScale: {x: 0.9999997, y: 0.9999999, z: 0.9999998}
   m_Children:
@@ -2833,7 +2832,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1148045660990214}
-  m_LocalRotation: {x: -0.5810913, y: -0.17801827, z: -0.5470139, w: 0.5756895}
+  m_LocalRotation: {x: -0.5810912, y: -0.17801826, z: -0.5470138, w: 0.57568944}
   m_LocalPosition: {x: -0.2532532, y: -0.0068199113, z: -0.015760183}
   m_LocalScale: {x: 0.9999997, y: 0.9999999, z: 0.9999998}
   m_Children:
@@ -3389,7 +3388,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742407828880870}
-  m_LocalRotation: {x: 0.79432034, y: -0.53215045, z: 0.27805704, w: 0.09249458}
+  m_LocalRotation: {x: 0.79432046, y: -0.5321505, z: 0.27805707, w: 0.092494585}
   m_LocalPosition: {x: -0.25325325, y: 0.0068199895, z: -0.015760317}
   m_LocalScale: {x: 0.9999998, y: 1, z: 0.9999999}
   m_Children:
@@ -4196,7 +4195,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -4325,17 +4324,6 @@ MonoBehaviour:
   RealPlayer: {fileID: 4139325755693222}
   DummyHolder: {fileID: 1812162267682120}
   DummyPlayer: {fileID: 4862407768136882}
---- !u!114 &114986144244840508
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812162267682120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b103a79a49b82d4db5ac2bbebf80c02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &136098272243544104
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4356,7 +4344,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1812162267682120}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 3
