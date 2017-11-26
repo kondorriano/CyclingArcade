@@ -26,10 +26,11 @@ public class PlayerSync : MonoBehaviour
         view = GetComponent<PhotonView>();
     }
 
-    public void SetupReal()
+    public GameObject SetupReal()
     {
         RealHolder.SetActive(true);
         DummyHolder.SetActive(false);
+        return RealHolder;
     }
 
     private void Update()

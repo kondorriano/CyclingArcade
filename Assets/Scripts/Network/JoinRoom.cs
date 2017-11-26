@@ -11,6 +11,12 @@ public class JoinRoom : PunBehaviour
     public Transform SpawnPoint;
 
     GameObject player;
+    GameController gc;
+
+    public void Init(GameController gameC)
+    {
+        gc = gameC;
+    }
 
     private void Start()
     {
@@ -32,8 +38,7 @@ public class JoinRoom : PunBehaviour
     {
 #if !SPECTATOR
         player = PhotonNetwork.Instantiate("PlayerObject", SpawnPoint.position, SpawnPoint.rotation, 0);
-        player.GetComponent<PlayerSync>().SetupReal();
-        //LoadCamera.SetActive(false);
+        gc.NewPlayer(player.GetComponent<PlayerSync>().SetupReal());
 #endif
     }
 
