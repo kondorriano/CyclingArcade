@@ -10,18 +10,17 @@ public class PlayerScript : MonoBehaviour
 
     GameController gc;
 
-    float cadence = 0;
+    float cadence = 10;
     int gear = 1;
 
-    Transform startCheckpoint;
-    Transform endCheckpoint;
-    int checkPointIndex = -1;
-
+    int currentCurve = 0;
+    float duration = 3f;
+    float progress = 0;
 
     public void Init(GameController gameC)
     {
         gc = gameC;
-        newSection(0);
+        currentCurve = 0;
     }
     // Use this for initialization
     void Start()
@@ -87,23 +86,35 @@ public class PlayerScript : MonoBehaviour
 
         anim.speed = cadence;
 
+        progress += Time.deltaTime / duration;
+        if (progress > 1f)
+        {
+            progress = 0;
+            ++currentCurve;
+            if (currentCurve >= gc.stage.CurveCount) currentCurve = 0;
+        }
+        position = gc.stage.GetCurvePoint(currentCurve, progress);
+        transform.Translate(position-transform.position, Space.World);
+        transform.LookAt(position + gc.stage.GetCurveDirection(currentCurve, progress));
+        /*
         position += dir.normalized * Time.deltaTime * cadence;
-        if((position-startCheckpoint.position).sqrMagnitude >= dir.sqrMagnitude)
+        if ((position-startCheckpoint.position).sqrMagnitude >= dir.sqrMagnitude)
         {
             newSection(((position - startCheckpoint.position).sqrMagnitude / dir.sqrMagnitude)-1f);
         }
 
         transform.Translate(position - transform.position,Space.World);
+        transform.rotation = Quaternion.Lerp(startCheckpoint.rotation, endCheckpoint.rotation, ((position - startCheckpoint.position).sqrMagnitude / dir.sqrMagnitude));
+        */
     }
-
+    /*
     void newSection(float offset)
     {
         if (++checkPointIndex >= gc.checkpoints.Count) checkPointIndex = 0;
-        startCheckpoint = gc.checkpoints[checkPointIndex];
-        endCheckpoint = gc.checkpoints[(checkPointIndex == gc.checkpoints.Count-1) ? 0 : checkPointIndex+1];
+        startCheckpoint = gc.checkpoints[checkPointIndex].GetChild(0);
+        endCheckpoint = gc.checkpoints[checkPointIndex].GetChild(1);
         float oldMagnitude = dir.sqrMagnitude;
         dir = endCheckpoint.position - startCheckpoint.position;
-        transform.LookAt(transform.position + dir.normalized);
         position = Vector3.Lerp(startCheckpoint.position, endCheckpoint.position, offset*(oldMagnitude/dir.sqrMagnitude));
-    }
+    }*/
 }

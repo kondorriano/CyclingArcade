@@ -5,12 +5,17 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
     public Transform tempMainCamera;
-    public Transform tempStage;
+    //public Transform tempStage;//OLD
 
     JoinRoom networking;
     PlayerScript player;
+
     [HideInInspector]
-    public List<Transform> checkpoints;
+    public BezierSpline stage;
+    //[HideInInspector]
+    //public List<Transform> checkpoints;//OLD
+
+
 
     bool initialized = false;
 
@@ -48,10 +53,14 @@ public class GameController : MonoBehaviour {
             networking = networkClone.GetComponent<JoinRoom>();
             networking.Init(this);
 
-            foreach(Transform child in tempStage)
+            GameObject stageClone = (GameObject)Instantiate(Resources.Load("StageSpline", typeof(GameObject)));
+            stageClone.transform.SetParent(transform, true);
+            stage = stageClone.GetComponent<BezierSpline>();
+
+            /*foreach (Transform child in tempStage)
             {
-                checkpoints.Add(child.GetChild(0));
-            }
+                checkpoints.Add(child);
+            }*/
 
             initialized = true;
         }
