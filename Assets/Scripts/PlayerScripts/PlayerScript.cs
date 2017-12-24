@@ -86,16 +86,16 @@ public class PlayerScript : MonoBehaviour
 
         anim.speed = cadence;
 
-        progress += Time.deltaTime / duration;
-        if (progress > 1f)
+        progress += Time.deltaTime * cadence;
+        if (progress >= gc.curveLenght[currentCurve])
         {
-            progress = 0;
+            progress -= gc.curveLenght[currentCurve];
             ++currentCurve;
             if (currentCurve >= gc.stage.CurveCount) currentCurve = 0;
         }
-        position = gc.stage.GetCurvePoint(currentCurve, progress);
+        position = gc.stage.GetCurvePoint(currentCurve, progress / gc.curveLenght[currentCurve]);
         transform.Translate(position-transform.position, Space.World);
-        transform.LookAt(position + gc.stage.GetCurveDirection(currentCurve, progress));
+        transform.LookAt(position + gc.stage.GetCurveDirection(currentCurve, progress / gc.curveLenght[currentCurve]));
         /*
         position += dir.normalized * Time.deltaTime * cadence;
         if ((position-startCheckpoint.position).sqrMagnitude >= dir.sqrMagnitude)

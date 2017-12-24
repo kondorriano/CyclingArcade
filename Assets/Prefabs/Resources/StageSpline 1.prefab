@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4985923967389004}
   - component: {fileID: 114636813008407296}
   m_Layer: 0
-  m_Name: StageSpline
+  m_Name: StageSpline 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,12 +60,12 @@ MonoBehaviour:
   - {x: 15, y: 0, z: 37.5}
   - {x: 0, y: 0, z: 37.5}
   - {x: -15, y: 0, z: 37.5}
-  - {x: -17.142298, y: 0, z: 23.098963}
+  - {x: -26.65, y: 0, z: 30}
   - {x: -26.65, y: 0, z: 20}
-  - {x: -88.01054, y: 0, z: 0}
-  - {x: 7.3416996, y: 0, z: 0}
+  - {x: -26.65, y: 0, z: 0}
+  - {x: -26.65, y: 0, z: 0}
   - {x: -26.65, y: 0, z: -20}
-  - {x: -35.268806, y: 0, z: -25.071125}
+  - {x: -26.65, y: 0, z: -30}
   - {x: -15.000002, y: 0, z: -37.5}
   - {x: 0, y: 0, z: -37.5}
   - {x: 15.000002, y: 0, z: -37.5}

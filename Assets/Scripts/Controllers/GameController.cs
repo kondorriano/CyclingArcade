@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
+    public bool useNetwork = true;
     public Transform tempMainCamera;
     //public Transform tempStage;//OLD
 
@@ -12,8 +13,8 @@ public class GameController : MonoBehaviour {
 
     [HideInInspector]
     public BezierSpline stage;
-    //[HideInInspector]
-    //public List<Transform> checkpoints;//OLD
+    [HideInInspector]
+    public List<float> curveLenght;
 
 
 
@@ -48,7 +49,7 @@ public class GameController : MonoBehaviour {
     {
         if (!initialized)
         {
-            GameObject networkClone = (GameObject) Instantiate(Resources.Load("Networking", typeof(GameObject)));
+            GameObject networkClone = (GameObject) Instantiate(Resources.Load((useNetwork) ? "Networking" : "FakeNetworking", typeof(GameObject)));
             networkClone.transform.SetParent(transform, true);
             networking = networkClone.GetComponent<JoinRoom>();
             networking.Init(this);
@@ -57,10 +58,21 @@ public class GameController : MonoBehaviour {
             stageClone.transform.SetParent(transform, true);
             stage = stageClone.GetComponent<BezierSpline>();
 
-            /*foreach (Transform child in tempStage)
+            //CurveLenght
+            for (int i = 0; i < stage.CurveCount; ++i)
             {
-                checkpoints.Add(child);
-            }*/
+                float lenght = 0;
+                Vector3 firstPos = stage.GetCurvePoint(i, 0);
+                Vector3 secondPos;
+                for(int j = 1; j <= 10; ++j)
+                {
+                    secondPos = stage.GetCurvePoint(i, j*.1f);
+                    lenght += (firstPos - secondPos).magnitude;
+                    firstPos = secondPos;
+                }
+                curveLenght.Add(lenght);
+                Debug.Log("Curve " + i + ": " +lenght);
+            }
 
             initialized = true;
         }
